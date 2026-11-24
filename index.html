@@ -288,13 +288,24 @@ $('#mute').onclick = () => {
    📷 YOUR PHOTO: put your picture in the assets folder and set its path here.
    If the file is missing, a heart placeholder is shown instead.
    ================================================================ */
-const PHOTO_SRCS = ['assets/photo1.jpeg', 'assets/photo2.jpeg']; // [left frame, right frame]
-document.querySelectorAll('.pic img').forEach((img, i) => {
-  img.onload = () => { img.hidden = false; };
-  img.onerror = () => { img.hidden = true; };
-  img.src = PHOTO_SRCS[i];
-});
+const PHOTO_SRCS = [
+  './assets/photo1.jpeg',
+  './assets/photo2.jpeg'
+];
 
+document.querySelectorAll('.pic img').forEach((img, i) => {
+  img.hidden = false;
+  img.src = PHOTO_SRCS[i];
+
+  img.onload = () => {
+    console.log('사진 로딩 성공:', img.src);
+  };
+
+  img.onerror = () => {
+    console.error('사진 로딩 실패:', img.src);
+    img.hidden = true;
+  };
+});
 /* ---------- enter ---------- */
 $('#enterBtn').onclick = () => { startAudio(); $('#enter').classList.add('gone'); };
 
