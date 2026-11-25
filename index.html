@@ -367,7 +367,7 @@ $('#mute').onclick = () => {
    📷 YOUR PHOTO: put your picture in the assets folder and set its path here.
    If the file is missing, a heart placeholder is shown instead.
    ================================================================ */
-const PHOTO_SRCS = ['assets/photo1.jpg', 'assets/photo2.jpg']; // [left frame, right frame]
+const PHOTO_SRCS = ['assets/photo1.jpeg', 'assets/photo2.jpeg']; // [left frame, right frame]
 document.querySelectorAll('.pic img').forEach((img, i) => {
   img.onload = () => { img.hidden = false; };
   img.onerror = () => { img.hidden = true; };
