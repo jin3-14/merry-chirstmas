@@ -1,3 +1,6 @@
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -378,7 +381,8 @@ $('#mute').onclick = () => {
    If the file is missing, a heart placeholder is shown instead.
    ================================================================ */
 const PHOTO_SRCS = ['assets/photo1.jpeg', 'assets/photo2.jpeg']; // [left frame, right frame]
-document.querySelectorAll('.pic img').forEach((img, i) => {
+document.querySelectorAll('#scene .pic img').forEach((img, i) => {
+
   img.onload = () => { img.hidden = false; };
   img.onerror = () => { img.hidden = true; };
   img.src = PHOTO_SRCS[i];
